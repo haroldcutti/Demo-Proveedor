@@ -37,9 +37,9 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    // Ejecutar el contenedor Docker
+                    // Ejecutar el contenedor Docker en el puerto 8081
                     bat '''
-                    docker run -d -p 8080:80 demo-jenkins
+                    docker run -d -p 8081:80 demo-jenkins
                     '''
                 }
             }
