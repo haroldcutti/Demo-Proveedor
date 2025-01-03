@@ -13,7 +13,7 @@ FROM nginx:1.21.6-alpine
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Copiar los archivos construidos de Angular al directorio de Nginx
-COPY --from=build /app/dist/agro-inversiones /usr/share/nginx/html
+COPY --from=build /app/dist/agro-inversiones/browser /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
