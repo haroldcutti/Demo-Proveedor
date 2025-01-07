@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Compilar el proyecto (en este caso, el frontend)
-                    bat 'npm run build --prod'
+                    bat 'npm run build --configuration production'
                 }
             }
         }
