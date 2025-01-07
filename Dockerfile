@@ -5,7 +5,7 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY --from=build /app/dist/agro-inversiones /usr/share/nginx/html
 
 RUN npm run build --prod
 
