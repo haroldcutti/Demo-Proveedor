@@ -1,11 +1,9 @@
-FROM node:20 AS build
+FROM node:18 AS build
 WORKDIR /app
 
-COPY package*.json ./
+COPY . .
 
 RUN npm install
-
-COPY --from=build /app/dist/agro-inversiones /usr/share/nginx/html
 
 RUN npm run build --prod
 
@@ -15,4 +13,5 @@ COPY --from=build /app/dist/agro-inversiones /usr/share/nginx/html
 
 EXPOSE 80
 
+Comando por defecto para ejecutar Nginx
 CMD ["nginx", "-g", "daemon off;"]
